@@ -1,0 +1,27 @@
+# read in states
+import random
+f = open("states.txt")
+data = f.readlines()
+states = [line.strip() for line in data]
+f.close()
+# read in capitals
+f = open("capitals.txt")
+data = f.readlines()
+capitals = [line.strip() for line in data]
+f.close()
+
+answers={}
+for i in range(len(states)):
+  answers[states[i]]=capitals[i]
+ 
+  
+while True:
+  guess=random.randint(0,len(states)-1)
+  quiz=input("What is the capital of "+states[guess]+"? ")
+  if quiz==capitals[guess]:
+    print("Correct!")
+  else:
+    break
+  
+
+
